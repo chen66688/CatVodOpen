@@ -21,4 +21,4 @@ Not being maintained and uncertain whether they will be updated.
 ### **Download**
 [Release](https://github.com/catvod/CatVodOpen/releases)
 
-- Windows only test on windows11.
+- Windows release only test on windows11.
