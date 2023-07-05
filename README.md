@@ -15,8 +15,8 @@ Not being maintained and uncertain whether they will be updated.
 - Only video module.
 - Not supporting sniffing.
 - Basic JS interface support.
+- No builtin maccms api support.
 - etc.
 
 ### **Download**
-
-- Windows 
+[Release](https://github.com/catvod/CatVodOpen/releases)
