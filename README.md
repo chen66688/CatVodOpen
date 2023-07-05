@@ -22,3 +22,4 @@ Not being maintained and uncertain whether they will be updated.
 [Release](https://github.com/catvod/CatVodOpen/releases)
 
 - Windows release only test on windows11.
+- MacOS coming soon.
