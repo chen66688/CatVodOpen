@@ -14,4 +14,5 @@ Not being maintained and uncertain whether they will be updated.
 - Only local `assets://` config is supported, and network config is not available. 
 - Only video module.
 - Not supporting sniffing.
+- Basic JS interface support.
 - etc.
