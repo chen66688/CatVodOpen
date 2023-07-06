@@ -26,4 +26,4 @@ Not being maintained and uncertain whether they will be updated.
   - Builtin config `data\flutter_assets\asset\js\config_open.json`
 - MacOS only test on `Big Sur` and `Monterey`.
 
-  - Builtin config `*.app\Contents\Frameworks\App.framework\Resources\flutter_assets\asset\js\config_open.json`
+  - Builtin config `*.app/Contents/Frameworks/App.framework/Resources/flutter_assets/asset/js/config_open.json`
