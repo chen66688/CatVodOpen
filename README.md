@@ -27,3 +27,6 @@ Not being maintained and uncertain whether they will be updated.
 - MacOS only test on `Big Sur` and `Monterey`.
 
   - Builtin config `*.app/Contents/Frameworks/App.framework/Resources/flutter_assets/asset/js/config_open.json`
+- iOS only test on `16.0+`.
+
+  - Builtin config `*.ipa/Payload/Runner.app/Frameworks/App.framework/flutter_assets/asset/js/config_open.json` 
