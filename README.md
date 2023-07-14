@@ -12,7 +12,7 @@ Not being maintained and uncertain whether they will be updated.
 ### **Limits**
 
 - Only local `assets://` config is supported, and network config is not available. 
-- Only video module.
+- Only video&cloud disk module.
 - Not supporting sniffing.
 - Basic JS interface support.
 - No builtin maccms api support.
