@@ -1,6 +1,8 @@
 # CatVodOpen
 Open version of catvod.
 
+[🚀TG](https://t.me/catvodapp_offical)
+
 ### **Notice**
 
 The open version was originally planned to start in december of last year, but it was delayed due to other matters. So the open version is mainly based on the december version from last year, but will include some bug fixes and core feature merges.
