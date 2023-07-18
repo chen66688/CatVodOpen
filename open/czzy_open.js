@@ -165,30 +165,6 @@ async function detail(id) {
     });
 }
 
-async function proxy(segments, headers) {
-    let what = segments[0];
-    let url = base64Decode(segments[1]);
-    if (what == 'img') {
-        var resp = await req(url, {
-            buffer: 2,
-            headers: {
-                Referer: url,
-                'User-Agent': UA,
-            },
-        });
-        return JSON.stringify({
-            code: resp.code,
-            buffer: 2,
-            content: resp.content,
-            headers: resp.headers,
-        });
-    }
-    return JSON.stringify({
-        code: 500,
-        content: '',
-    });
-}
-
 async function play(flag, id, flags) {
     const link = url + '/v_play/' + id + '.html';
     const html = await request(link);
@@ -259,7 +235,6 @@ export function __jsEvalReturn() {
         category: category,
         detail: detail,
         play: play,
-        proxy: proxy,
         search: search,
     };
 }
