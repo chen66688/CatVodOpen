@@ -15,7 +15,7 @@
               "key": "bookan",
               "name": "博看听书",
               "type": 10,
-              "api": "./bookan_open.js"
+              "api": "assets://js/bookan_open.js"
           }
       ]
   },
