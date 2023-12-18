@@ -95,8 +95,9 @@ async function request(url, opt) {
                 data.on('end', async () => {
                     if (stream['onDone']) await stream['onDone']();
                 });
+            } else {
+                if (stream['onDone']) await stream['onDone']();
             }
-            if (stream['onDone']) await stream['onDone']();
             return 'stream...';
         }
         return { code: resp.status, headers: resHeader, content: data };
