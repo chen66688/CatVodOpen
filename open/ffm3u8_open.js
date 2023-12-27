@@ -94,38 +94,37 @@ async function proxy(segments, headers, reqHeaders) {
     let what = segments[0];
     let segs = decodeURIComponent(segments[1]);
     if (what == 'hls') {
+        function hlsHeader(data, hls) {
+            let hlsHeaders = {};
+            if (data.headers['content-length']) {
+                Object.assign(hlsHeaders, data.headers, { 'content-length': hls.length.toString() });
+            } else {
+                Object.assign(hlsHeaders, data.headers);
+            }
+            delete hlsHeaders['transfer-encoding'];
+            if (hlsHeaders['content-encoding'] == 'gzip') {
+                delete hlsHeaders['content-encoding'];
+            }
+            return hlsHeaders;
+        }
         const hlsData = await hlsCache(segs, headers);
         if (hlsData.variants) {
             // variants -> variants -> .... ignore
             const hls = HLS.stringify(hlsData.plist);
-            let hlsHeaders = {};
-            if (hlsData.headers['content-length']) {
-                Object.assign(hlsHeaders, hlsData.headers, { 'content-length': hls.length.toString() });
-            } else {
-                Object.assign(hlsHeaders, hlsData.headers);
-            }
-            const result = {
+            return {
                 code: hlsData.code,
                 content: hls,
-                headers: hlsHeaders,
+                headers: hlsHeader(hlsData, hls),
             };
-            return result;
         } else {
             const hls = HLS.stringify(hlsData.plist, (segment) => {
                 return js2Proxy(false, siteType, siteKey, 'ts/' + encodeURIComponent(hlsData.key + '/' + segment.mediaSequenceNumber.toString()), headers);
             });
-            let hlsHeaders = {};
-            if (hlsData.headers['content-length']) {
-                Object.assign(hlsHeaders, hlsData.headers, { 'content-length': hls.length.toString() });
-            } else {
-                Object.assign(hlsHeaders, hlsData.headers);
-            }
-            const result = {
+            return {
                 code: hlsData.code,
                 content: hls,
-                headers: hlsHeaders,
+                headers: hlsHeader(hlsData, hls),
             };
-            return result;
         }
     } else if (what == 'ts') {
         const info = segs.split('/');
