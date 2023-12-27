@@ -410,7 +410,7 @@ async function startTsTask(hlsKey, task, headers) {
         stream: file,
         timeout: [5000, 10000],
     });
-    if (resp.error) {
+    if (resp.error || resp.code >= 300) {
         await file.close();
         if (!task.read) {
             await file.delete();
