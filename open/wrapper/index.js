@@ -477,16 +477,7 @@ globalThis.JSFile = function (path) {
     };
 };
 
-globalThis.url2Proxy = async function (type, url, headers) {
-    let hd = Object.keys(headers).length == 0 ? '_' : encodeURIComponent(JSON.stringify(headers));
-    let uri = new Uri(url);
-    let path = uri.path();
-    path = path.substring(path.lastIndexOf('/'));
-    let ext = path.indexOf('.') >= 0 ? path.substring(path.indexOf('.')) : '.bin';
-    return 'http://127.0.0.1:13333/up/' + randStr(6) + '/' + type + '/' + hd + '/' + encodeURIComponent(url) + '/' + ext;
-};
-
-globalThis.js2Proxy = async function (dynamic, siteType, site, url, headers) {
+globalThis.js2Proxy = function (dynamic, siteType, site, url, headers) {
     let hd = Object.keys(headers).length == 0 ? '_' : encodeURIComponent(JSON.stringify(headers));
     return (dynamic ? 'js2p://_WEB_/' : 'http://127.0.0.1:13333/jp/') + randStr(6) + '/' + siteType + '/' + site + '/' + hd + '/' + encodeURIComponent(url);
 };
