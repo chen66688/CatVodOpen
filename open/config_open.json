@@ -35,7 +35,7 @@
               "key": "copymanga",
               "name": "拷贝漫画",
               "type": 20,
-              "api": "assets://js/copymanga.js"
+              "api": "assets://js/copymanga_open.js"
           }
       ]
   },
